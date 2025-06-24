@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+export const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
@@ -16,30 +16,43 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 					🌍 TripThread
 				</Link>
 
-				<div className="collapse navbar-collapse justify-content-end">
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span className="navbar-toggler-icon"></span>
+				</button>
+
+				<div className="collapse navbar-collapse justify-content-end" id="navbarNav">
 					<ul className="navbar-nav mb-2 mb-lg-0">
 						<li className="nav-item">
-							<Link className="nav-link" to="/posts">Explore</Link>
+							<Link className="nav-link" to="/posts">Destination</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/create">Post a Journal</Link>
 						</li>
 
 						{isLoggedIn ? (
-							<>
-								<li className="nav-item">
-									<Link className="nav-link" to="/create">Write a Post</Link>
-								</li>
-								<li className="nav-item">
-									<button onClick={handleLogout} className="btn btn-outline-danger ms-2">
-										Logout
-									</button>
-								</li>
-							</>
+							<li className="nav-item">
+								<button onClick={handleLogout} className="btn btn-outline-danger ms-2">
+									Logout
+								</button>
+							</li>
 						) : (
 							<>
 								<li className="nav-item">
 									<Link className="nav-link" to="/login">Login</Link>
 								</li>
 								<li className="nav-item">
-									<Link className="nav-link" to="/register">Register</Link>
+									<Link className="nav-link" to="/register">SignUp</Link>
+								</li>
+								<li className="nav-item">
+									<Link className="nav-link" to="/contact">Contact</Link>
 								</li>
 							</>
 						)}
@@ -49,5 +62,3 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 		</nav>
 	);
 };
-
-export default Navbar;
