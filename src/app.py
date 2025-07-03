@@ -20,6 +20,7 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=[ "https://super-duper-rotary-phone-5g446jr56j49c4gj7-3000.app.github.dev"]
 )
 app.url_map.strict_slashes = False
+CORS(app)
 
 
 # Setup the Flask-JWT-Extended extension
