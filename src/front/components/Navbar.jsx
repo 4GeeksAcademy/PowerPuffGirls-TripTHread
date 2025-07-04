@@ -31,7 +31,15 @@ export const Navbar = () => {
 
 					{isLoggedIn ? (
 						<>
-
+							<Link to="/">
+								<span className="navbar-brand mb-0 h1">post</span>
+							</Link>
+							<Link to="/">
+								<span className="navbar-brand mb-0 h1">post</span>
+							</Link>
+							<Link to="/">
+								<span className="navbar-brand mb-0 h1">post</span>
+							</Link>
 							<button className="btn btn-danger" onClick={handleLogout}>
 								Logout
 							</button>
@@ -51,9 +59,13 @@ export const Navbar = () => {
 
 							</>
 						)}
-
+				</div>
+				<div className="ml-auto">
+					<Link to="/destination">
+						<button className="btn btn-primary">Destination</button>
+					</Link>
 				</div>
 			</div>
-		</nav>
+		</nav >
 	);
 };

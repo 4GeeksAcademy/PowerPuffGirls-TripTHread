@@ -54,6 +54,7 @@ def apply_cors_headers(response):
 app.url_map.strict_slashes = False
 app.config["JWT_SECRET_KEY"] = "euihwi3i3desuy8yx[q$^83hclu90)]"
 jwt = JWTManager(app)
+CORS(app)
 
 
 # Setup the Flask-JWT-Extended extension
