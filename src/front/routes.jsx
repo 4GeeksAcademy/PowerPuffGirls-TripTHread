@@ -10,10 +10,12 @@ import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import { ContactUs } from "./pages/ContactUs";
-import { Destination } from "./pages/Destination";
 import { Login } from "./pages/Login";
 import { HomePage } from "./pages/HomePage";
 import { Signup } from "./pages/Signup";
+import { Destination } from "./pages/Destination";
+import { WorldMap } from "./pages/WorldMap";
+
 
 
 export const router = createBrowserRouter(
@@ -33,6 +35,7 @@ export const router = createBrowserRouter(
         <Route path= "/login" element={<Login />} />
         <Route path= "/homepage" element={<HomePage />} />
         <Route path= "/signup" element={<Signup />} />
+        <Route path= "/worldmap" element={<WorldMap />} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         {/* <Route path="/demo" element={<Demo />} /> */}
         <Route path="/contactus" element={<ContactUs />} />

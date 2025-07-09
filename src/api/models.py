@@ -25,6 +25,7 @@ class User(db.Model):
 
 
 class Message(db.Model):
+    __tablename__ = "message"
     id: Mapped[int] = mapped_column(primary_key=True)
     message_name: Mapped[str] = mapped_column(String(120), nullable=False)
     message_email:  Mapped[str] = mapped_column(
